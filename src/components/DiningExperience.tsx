@@ -24,13 +24,13 @@ export const DiningExperience: React.FC = () => {
           Cooked over slow oak embers by Auntie Kamla using organic black soybeans, Himalayan herbs, hand-churned butter, and fragrant finger millet.
         </p>
 
-        {/* Categories */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
+        {/* Categories with Mobile Horizontal Scroll */}
+        <div className="flex items-center sm:justify-center gap-2 mt-6 overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 py-1">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition cursor-pointer ${
+              className={`px-4 py-2 sm:py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition shrink-0 cursor-pointer ${
                 selectedCategory === cat
                   ? 'bg-[#2D4B3E] text-white shadow-xs'
                   : 'bg-[#F4EFE6] text-[#1D2A24]/80 hover:bg-[#E9E3D5]'

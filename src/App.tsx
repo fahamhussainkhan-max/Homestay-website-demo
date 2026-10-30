@@ -89,8 +89,8 @@ export default function App() {
         onCurrencyChange={setCurrency}
       />
 
-      {/* Main Content Sections */}
-      <main className="pt-16 sm:pt-20 flex-1">
+      {/* Main Content Sections with bottom padding for mobile bar */}
+      <main className="pt-16 sm:pt-20 pb-20 sm:pb-0 flex-1">
         {/* 1. Hero */}
         <Hero
           onOpenBooking={handleOpenBooking}
@@ -146,8 +146,8 @@ export default function App() {
       {/* Footer */}
       <Footer />
 
-      {/* Floating WhatsApp Quick Connect Button */}
-      <aside aria-label="Quick contact" className="fixed bottom-6 right-6 z-30">
+      {/* Desktop Floating WhatsApp Quick Connect Button */}
+      <aside aria-label="Quick contact" className="fixed bottom-6 right-6 z-30 hidden sm:block">
         <a
           href="https://wa.me/919876543210?text=Hello%20Uncle%20Bipin,%20I%20would%20like%20to%20inquire%20about%20staying%20at%20Pinecrest%20Meadow"
           target="_blank"
@@ -156,9 +156,39 @@ export default function App() {
           aria-label="Chat on WhatsApp"
         >
           <MessageCircle className="w-4 h-4 fill-white" />
-          <span className="hidden sm:inline">Chat with Hosts</span>
+          <span>Chat with Hosts</span>
         </a>
       </aside>
+
+      {/* Mobile Fixed Bottom Reservation Bar */}
+      <div className="fixed bottom-0 left-0 right-0 z-30 sm:hidden bg-[#FBF9F5]/95 backdrop-blur-md border-t border-[#E9E3D5] px-4 py-2.5 pb-safe shadow-[0_-8px_20px_rgba(0,0,0,0.06)] flex items-center justify-between gap-3">
+        <div>
+          <div className="text-[11px] text-gray-500 font-medium">From</div>
+          <div className="text-sm font-serif font-bold text-[#2D4B3E]">
+            {currency === 'INR' ? '₹3,200' : currency === 'USD' ? '$38' : '€35'}{' '}
+            <span className="text-[10px] text-gray-500 font-sans font-normal">/ night</span>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <a
+            href="https://wa.me/919876543210?text=Hello%20Uncle%20Bipin,%20I%20would%20like%20to%20inquire%20about%20staying%20at%20Pinecrest%20Meadow"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center shrink-0 shadow-xs"
+            aria-label="WhatsApp"
+          >
+            <MessageCircle className="w-5 h-5 fill-white" />
+          </a>
+
+          <button
+            onClick={handleOpenBooking}
+            className="px-5 py-2.5 rounded-full bg-[#2D4B3E] text-white text-xs font-bold uppercase tracking-wider shadow-sm flex items-center gap-1.5 active:scale-95 cursor-pointer"
+          >
+            <span>Reserve</span>
+          </button>
+        </div>
+      </div>
 
       {/* Modals */}
       <BookingModal

@@ -59,15 +59,15 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onBookNow, currenc
           </div>
         </div>
 
-        <form onSubmit={handleSearch} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+        <form onSubmit={handleSearch} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5">
           {/* Check In */}
           <div className="bg-[#F4EFE6]/80 rounded-2xl p-3 border border-[#E9E3D5] hover:border-[#2D4B3E]/40 transition">
-            <label className="text-[11px] uppercase tracking-wider font-bold text-[#2D4B3E] flex items-center gap-1.5 mb-1.5">
+            <label className="text-[10px] sm:text-[11px] uppercase tracking-wider font-bold text-[#2D4B3E] flex items-center gap-1.5 mb-1.5">
               <Calendar className="w-3.5 h-3.5 text-[#C27C58]" /> Check-in
             </label>
             <input
               type="date"
-              className="w-full bg-transparent text-xs font-semibold text-[#1D2A24] focus:outline-none cursor-pointer"
+              className="w-full bg-transparent text-[16px] sm:text-xs font-semibold text-[#1D2A24] focus:outline-none cursor-pointer py-1"
               value={checkIn}
               min={today}
               onChange={(e) => setCheckIn(e.target.value)}
@@ -77,12 +77,12 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onBookNow, currenc
 
           {/* Check Out */}
           <div className="bg-[#F4EFE6]/80 rounded-2xl p-3 border border-[#E9E3D5] hover:border-[#2D4B3E]/40 transition">
-            <label className="text-[11px] uppercase tracking-wider font-bold text-[#2D4B3E] flex items-center gap-1.5 mb-1.5">
+            <label className="text-[10px] sm:text-[11px] uppercase tracking-wider font-bold text-[#2D4B3E] flex items-center gap-1.5 mb-1.5">
               <CalendarCheck className="w-3.5 h-3.5 text-[#C27C58]" /> Check-out
             </label>
             <input
               type="date"
-              className="w-full bg-transparent text-xs font-semibold text-[#1D2A24] focus:outline-none cursor-pointer"
+              className="w-full bg-transparent text-[16px] sm:text-xs font-semibold text-[#1D2A24] focus:outline-none cursor-pointer py-1"
               value={checkOut}
               min={checkIn}
               onChange={(e) => setCheckOut(e.target.value)}
@@ -92,13 +92,13 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onBookNow, currenc
 
           {/* Guests */}
           <div className="bg-[#F4EFE6]/80 rounded-2xl p-3 border border-[#E9E3D5] hover:border-[#2D4B3E]/40 transition">
-            <label className="text-[11px] uppercase tracking-wider font-bold text-[#2D4B3E] flex items-center gap-1.5 mb-1.5">
+            <label className="text-[10px] sm:text-[11px] uppercase tracking-wider font-bold text-[#2D4B3E] flex items-center gap-1.5 mb-1.5">
               <Users className="w-3.5 h-3.5 text-[#C27C58]" /> Guests
             </label>
             <select
               value={guests}
               onChange={(e) => setGuests(e.target.value)}
-              className="w-full bg-transparent text-xs font-semibold text-[#1D2A24] focus:outline-none cursor-pointer"
+              className="w-full bg-transparent text-[16px] sm:text-xs font-semibold text-[#1D2A24] focus:outline-none cursor-pointer py-1"
             >
               <option value="1">1 Guest (Solo / Workation)</option>
               <option value="2">2 Guests (Couples)</option>
@@ -110,13 +110,13 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onBookNow, currenc
 
           {/* Cottage Choice */}
           <div className="bg-[#F4EFE6]/80 rounded-2xl p-3 border border-[#E9E3D5] hover:border-[#2D4B3E]/40 transition">
-            <label className="text-[11px] uppercase tracking-wider font-bold text-[#2D4B3E] flex items-center gap-1.5 mb-1.5">
+            <label className="text-[10px] sm:text-[11px] uppercase tracking-wider font-bold text-[#2D4B3E] flex items-center gap-1.5 mb-1.5">
               <Bed className="w-3.5 h-3.5 text-[#C27C58]" /> Cottage Type
             </label>
             <select
               value={roomId}
               onChange={(e) => setRoomId(e.target.value)}
-              className="w-full bg-transparent text-xs font-semibold text-[#1D2A24] focus:outline-none cursor-pointer truncate"
+              className="w-full bg-transparent text-[16px] sm:text-xs font-semibold text-[#1D2A24] focus:outline-none cursor-pointer truncate py-1"
             >
               {ROOMS.map((room) => (
                 <option key={room.id} value={room.id}>
@@ -127,25 +127,25 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onBookNow, currenc
           </div>
 
           {/* Bottom Bar: Price Summary and Submit Button */}
-          <div className="sm:col-span-2 lg:col-span-4 mt-2 pt-3 flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#FBF9F5] p-3.5 rounded-2xl border border-[#E9E3D5]">
-            <div className="flex items-center gap-3 text-left w-full sm:w-auto">
+          <div className="sm:col-span-2 lg:col-span-4 mt-2 pt-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 bg-[#FBF9F5] p-3.5 rounded-2xl border border-[#E9E3D5]">
+            <div className="flex items-center gap-3 text-left">
               <div className="w-9 h-9 rounded-full bg-[#2D4B3E]/10 text-[#2D4B3E] flex items-center justify-center shrink-0">
                 <ShieldCheck className="w-5 h-5 text-[#2D4B3E]" />
               </div>
               <div>
-                <div className="text-xs text-gray-500 font-medium">
+                <div className="text-[11px] sm:text-xs text-gray-500 font-medium">
                   {calculatedNights} Night{calculatedNights > 1 ? 's' : ''} Stay &bull; {selectedRoom.name}
                 </div>
-                <div className="text-sm font-bold text-[#2D4B3E]">
+                <div className="text-xs sm:text-sm font-bold text-[#2D4B3E]">
                   Estimated: {formatPrice(estimatedTotal, currency)}{' '}
-                  <span className="text-[11px] font-normal text-gray-500">(Taxes incl. &bull; Free cancellation up to 48 hrs)</span>
+                  <span className="text-[10px] sm:text-[11px] font-normal text-gray-500 block sm:inline">(Taxes incl. &bull; Free breakfast)</span>
                 </div>
               </div>
             </div>
 
             <button
               type="submit"
-              className="w-full sm:w-auto px-7 py-3 rounded-xl bg-[#2D4B3E] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#436B59] transition flex items-center justify-center gap-2 custom-shadow cursor-pointer active:scale-95 shrink-0"
+              className="w-full sm:w-auto px-7 py-3.5 sm:py-3 rounded-xl bg-[#2D4B3E] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#436B59] transition flex items-center justify-center gap-2 custom-shadow cursor-pointer active:scale-98 shrink-0 min-h-[44px]"
             >
               <span>Instant Reserve</span>
               <ArrowRight className="w-4 h-4" />

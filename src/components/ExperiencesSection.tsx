@@ -36,13 +36,13 @@ export const ExperiencesSection: React.FC<ExperiencesProps> = ({ onInquireExperi
           From silent sunrise pranayama overlooking 7,000m peaks to stargazing through our 8-inch telescope and guided walks through virgin oak forests.
         </p>
 
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
+        {/* Filter Tabs with Mobile Horizontal Scroll */}
+        <div className="flex items-center sm:justify-center gap-2 mt-6 overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 py-1">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition cursor-pointer ${
+              className={`px-4 py-2 sm:py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition shrink-0 cursor-pointer ${
                 filter === cat
                   ? 'bg-[#2D4B3E] text-white shadow-xs'
                   : 'bg-[#F4EFE6] text-[#1D2A24]/80 hover:bg-[#E9E3D5]'

@@ -134,7 +134,7 @@ export const ContactSection: React.FC = () => {
                   placeholder="e.g. Priya Sundaram"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#E9E3D5] bg-white text-xs text-[#1D2A24] focus:outline-none focus:border-[#2D4B3E]"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#E9E3D5] bg-white text-[16px] sm:text-xs text-[#1D2A24] focus:outline-none focus:border-[#2D4B3E]"
                 />
               </div>
 
@@ -148,7 +148,7 @@ export const ContactSection: React.FC = () => {
                   placeholder="+91 98765 43210 or priya@example.com"
                   value={contact}
                   onChange={(e) => setContact(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#E9E3D5] bg-white text-xs text-[#1D2A24] focus:outline-none focus:border-[#2D4B3E]"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#E9E3D5] bg-white text-[16px] sm:text-xs text-[#1D2A24] focus:outline-none focus:border-[#2D4B3E]"
                 />
               </div>
 
@@ -162,13 +162,13 @@ export const ContactSection: React.FC = () => {
                   placeholder="Tell us when you are thinking of visiting, number of guests, or if you need help planning your itinerary..."
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#E9E3D5] bg-white text-xs text-[#1D2A24] focus:outline-none focus:border-[#2D4B3E]"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#E9E3D5] bg-white text-[16px] sm:text-xs text-[#1D2A24] focus:outline-none focus:border-[#2D4B3E]"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-xl bg-[#2D4B3E] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#436B59] transition flex items-center justify-center gap-2 custom-shadow cursor-pointer active:scale-95"
+                className="w-full py-3.5 sm:py-3.5 rounded-xl bg-[#2D4B3E] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#436B59] transition flex items-center justify-center gap-2 custom-shadow cursor-pointer active:scale-98 min-h-[46px]"
               >
                 <Send className="w-3.5 h-3.5" />
                 <span>Send Note to Hosts</span>

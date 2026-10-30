@@ -8,26 +8,26 @@ export const SeasonsGuide: React.FC = () => {
   const current = SEASONS_DATA[activeSeason];
 
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-      <div className="bg-[#F4EFE6] rounded-3xl p-6 sm:p-8 md:p-10 border border-[#E9E3D5] custom-shadow">
-        <div className="text-center mb-8">
-          <span className="text-[11px] font-bold tracking-[0.2em] text-[#C27C58] uppercase block mb-1">
+    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-16">
+      <div className="bg-[#F4EFE6] rounded-3xl p-4 sm:p-8 md:p-10 border border-[#E9E3D5] custom-shadow">
+        <div className="text-center mb-6 sm:mb-8">
+          <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] text-[#C27C58] uppercase block mb-1">
             Weather &amp; Seasons
           </span>
-          <h2 className="text-2xl sm:text-3xl font-serif text-[#1D2A24] font-bold">
+          <h2 className="text-xl sm:text-3xl font-serif text-[#1D2A24] font-bold">
             When Should You Visit Almora?
           </h2>
           <p className="text-xs sm:text-sm text-gray-600 max-w-lg mx-auto mt-2 leading-relaxed">
             Every season in Kumaon brings a distinct wonder, from springtime fruit blossoms to autumn snow views and cozy winter hearths.
           </p>
 
-          {/* Season Switcher Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
+          {/* Season Switcher Pills with Mobile Scroll */}
+          <div className="flex items-center sm:justify-center gap-2 mt-5 sm:mt-6 overflow-x-auto no-scrollbar -mx-2 px-2 sm:mx-0 sm:px-0 py-1">
             {SEASONS_DATA.map((s, idx) => (
               <button
                 key={s.season}
                 onClick={() => setActiveSeason(idx)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition cursor-pointer ${
+                className={`px-3.5 py-2 sm:py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition shrink-0 cursor-pointer ${
                   activeSeason === idx
                     ? 'bg-[#2D4B3E] text-white shadow-xs'
                     : 'bg-white text-[#1D2A24]/80 hover:bg-[#E9E3D5] border border-[#E9E3D5]'

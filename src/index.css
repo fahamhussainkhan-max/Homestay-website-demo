@@ -28,5 +28,19 @@
   .custom-shadow-lg {
     box-shadow: 0 20px 40px -10px rgba(45, 75, 62, 0.14), 0 8px 16px -4px rgba(45, 75, 62, 0.06);
   }
+
+  /* Mobile scrollable tabs without scrollbar clutter */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Safe area padding for notch devices */
+  .pb-safe {
+    padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px);
+  }
 }
 
