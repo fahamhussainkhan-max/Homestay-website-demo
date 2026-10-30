@@ -1,0 +1,6 @@
+{
+  "name": "Pinecrest Meadow | Himalayan Homestay",
+  "description": "Handcrafted eco-sanctuary and family-run mountain homestay nestled amidst pine woods, apple orchards, and panoramic Himalayan views in Old Almora.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

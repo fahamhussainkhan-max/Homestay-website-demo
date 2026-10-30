@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-cream: #FBF9F5;
+  --color-brand-surface: #F4EFE6;
+  --color-brand-sage: #2D4B3E;
+  --color-brand-sageLight: #436B59;
+  --color-brand-earth: #C27C58;
+  --color-brand-earthLight: #D69472;
+  --color-brand-wood: #1D2A24;
+  --color-brand-sand: #E9E3D5;
+
+  --font-serif: "Playfair Display", Georgia, Cambria, "Times New Roman", serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .custom-shadow {
+    box-shadow: 0 10px 30px -5px rgba(45, 75, 62, 0.08), 0 4px 6px -2px rgba(45, 75, 62, 0.03);
+  }
+
+  .custom-shadow-lg {
+    box-shadow: 0 20px 40px -10px rgba(45, 75, 62, 0.14), 0 8px 16px -4px rgba(45, 75, 62, 0.06);
+  }
+}
+
